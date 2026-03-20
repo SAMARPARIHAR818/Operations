@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === Stitch "Modern Orchestrator" Design System === */
+    /* Botanical green palette from M3 tokens */
+    
+    --background: 150 18% 97%;       /* #f7faf8 - surface */
+    --foreground: 165 17% 10%;       /* #181c1b - on_surface */
+
+    --card: 0 0% 100%;               /* #ffffff - surface_container_lowest */
+    --card-foreground: 165 17% 10%;  /* #181c1b */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 165 17% 10%;
+
+    --primary: 133 63% 16%;          /* #0f441c - primary */
+    --primary-foreground: 0 0% 100%; /* #ffffff - on_primary */
+
+    --secondary: 160 100% 21%;       /* #006c4b - secondary */
+    --secondary-foreground: 0 0% 100%; /* #ffffff - on_secondary */
+
+    --muted: 150 10% 93%;            /* #ebefed - surface_container */
+    --muted-foreground: 140 7% 27%;  /* #41493e - on_surface_variant */
+
+    --accent: 153 100% 22%;          /* #00714e - on_secondary_container */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 41%;        /* #ba1a1a - error */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 100 8% 76%;            /* #c0c9bb - outline_variant */
+    --input: 150 10% 93%;            /* #ebefed - surface_container */
+    --ring: 133 40% 32%;             /* #36693c - surface_tint */
+
+    --radius: 0.75rem;
+
+    /* === Extended Surface Tokens (Stitch Tonal Hierarchy) === */
+    --surface: 150 18% 97%;                /* #f7faf8 */
+    --surface-dim: 150 5% 85%;             /* #d7dbd9 */
+    --surface-bright: 150 18% 97%;         /* #f7faf8 */
+    --surface-container-lowest: 0 0% 100%; /* #ffffff */
+    --surface-container-low: 150 10% 95%;  /* #f1f4f2 */
+    --surface-container: 150 10% 93%;      /* #ebefed */
+    --surface-container-high: 150 6% 90%;  /* #e6e9e7 */
+    --surface-container-highest: 150 4% 88%; /* #e0e3e1 */
+
+    /* === Accent Colors (Stitch) === */
+    --primary-container: 133 33% 28%;       /* #295c31 */
+    --primary-fixed: 133 55% 83%;           /* #b8f1b8 */
+    --primary-fixed-dim: 133 33% 72%;       /* #9cd49d */
+    --secondary-container: 160 100% 68%;    /* #64f9bc */
+    --secondary-fixed: 160 100% 70%;        /* #68fcbf */
+    --tertiary: 342 56% 27%;               /* #6b1d3d */
+    --tertiary-container: 342 43% 37%;      /* #883454 */
+    --tertiary-fixed: 342 100% 92%;         /* #ffd9e2 */
+    --outline: 120 5% 46%;                  /* #717a6d */
+  }
+
+  .dark {
+    --background: 160 5% 8%;         /* Dark surface */
+    --foreground: 150 10% 93%;       /* Light text */
+
+    --card: 160 6% 11%;
+    --card-foreground: 150 10% 93%;
+
+    --popover: 160 6% 11%;
+    --popover-foreground: 150 10% 93%;
+
+    --primary: 133 33% 72%;          /* #9cd49d - primary lighter for dark */
+    --primary-foreground: 133 100% 8%; /* #002107 */
+
+    --secondary: 160 77% 57%;        /* #45dfa4 */
+    --secondary-foreground: 160 100% 7%;
+
+    --muted: 160 6% 16%;
+    --muted-foreground: 140 5% 60%;
+
+    --accent: 160 6% 16%;
+    --accent-foreground: 150 10% 93%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 150 10% 93%;
+
+    --border: 160 6% 20%;
+    --input: 160 6% 16%;
+    --ring: 133 33% 72%;
+
+    --surface: 160 5% 8%;
+    --surface-dim: 160 5% 6%;
+    --surface-bright: 160 5% 14%;
+    --surface-container-lowest: 160 6% 5%;
+    --surface-container-low: 160 5% 8%;
+    --surface-container: 160 6% 11%;
+    --surface-container-high: 160 6% 14%;
+    --surface-container-highest: 160 6% 17%;
+
+    --primary-container: 133 55% 83%;
+    --primary-fixed: 133 55% 83%;
+    --primary-fixed-dim: 133 33% 72%;
+    --secondary-container: 160 100% 16%;
+    --secondary-fixed: 160 100% 70%;
+    --tertiary: 342 100% 82%;
+    --tertiary-container: 342 43% 37%;
+    --tertiary-fixed: 342 100% 92%;
+    --outline: 120 5% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* === Modern Orchestrator Utilities === */
+@layer utilities {
+  /* Tonal Surface Layers */
+  .surface-base {
+    background-color: hsl(var(--surface));
+  }
+  .surface-low {
+    background-color: hsl(var(--surface-container-low));
+  }
+  .surface-mid {
+    background-color: hsl(var(--surface-container));
+  }
+  .surface-high {
+    background-color: hsl(var(--surface-container-high));
+  }
+  .surface-highest {
+    background-color: hsl(var(--surface-container-highest));
+  }
+  .surface-lowest {
+    background-color: hsl(var(--surface-container-lowest));
+  }
+
+  /* Frosted Glass (The "Glass & Gradient" Rule) */
+  .glass {
+    background-color: hsl(var(--surface-container-lowest) / 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-card {
+    background-color: hsl(var(--surface-container-lowest) / 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 20px 40px rgba(24, 28, 27, 0.06);
+  }
+
+  .glass-sidebar {
+    background-color: hsl(var(--surface-container-low));
+  }
+
+  /* Ambient Shadow (from on_surface tint) */
+  .shadow-ambient {
+    box-shadow: 0 20px 40px rgba(24, 28, 27, 0.06);
+  }
+
+  /* Ghost Border (outline_variant at 15%) */
+  .ghost-border {
+    border: 1px solid hsl(var(--border) / 0.15);
+  }
+
+  /* Primary Gradient (135° from primary to primary-container) */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-container)));
+  }
+
+  /* Tonal card: slightly elevated appearance via background shift */
+  .tonal-card {
+    @apply surface-lowest rounded-2xl;
+    box-shadow: 0 20px 40px rgba(24, 28, 27, 0.06);
+  }
+}
