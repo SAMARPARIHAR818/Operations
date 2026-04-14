@@ -9,7 +9,7 @@ export type SystemContext = {
 };
 
 export async function getSystemContext(): Promise<SystemContext> {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // 1. High Risk Trips (Forecasted Risk > 70 or Status Risk = High)
     const { data: riskTrips } = await supabase
