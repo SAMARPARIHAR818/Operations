@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { NextResponse } from "next/server";
 
 export async function POST() {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // 1. Fetch Candidates for Priority
     // - High Risk Trips

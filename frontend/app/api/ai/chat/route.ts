@@ -8,7 +8,7 @@ const openai = new OpenAI({
 });
 
 export async function POST(req: NextRequest) {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     // 1. Auth Check - get user specifically
     const { data: { user }, error: authError } = await supabase.auth.getUser();
