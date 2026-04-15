@@ -28,9 +28,9 @@ const formSchema = z.object({
     morning_update: z.boolean(),
     wakeup_call: z.boolean(),
     vendor_coordination: z.boolean(),
-    complaint_count: z.coerce.number().min(0),
-    sentiment_score: z.coerce.number().min(1).max(10),
-    ops_rating: z.coerce.number().min(1).max(10),
+    complaint_count: z.number().min(0),
+    sentiment_score: z.number().min(1).max(10),
+    ops_rating: z.number().min(1).max(10),
     notes: z.string().optional(),
     proof_file: z.any().optional(),
 })
@@ -123,7 +123,7 @@ export function MonitoringForm({ tripId, onSuccess }: { tripId: string, onSucces
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Complaints</FormLabel>
-                                <FormControl><Input type="number" {...field} className="glass-input" /></FormControl>
+                                <FormControl><Input type="number" {...field} onChange={e => field.onChange(e.target.valueAsNumber || 0)} className="glass-input" /></FormControl>
                             </FormItem>
                         )}
                     />

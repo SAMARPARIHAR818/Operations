@@ -1,0 +1,25 @@
+
+> bookido-ops-frontend@0.1.0 build
+> next build
+
+   ▲ Next.js 14.1.0
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./components/forms/MonitoringForm.tsx:44:9
+Type error: Type 'Resolver<{ log_date: string; morning_update: boolean; wakeup_call: boolean; vendor_coordination: boolean; complaint_count: unknown; sentiment_score: unknown; ops_rating: unknown; notes?: string | undefined; proof_file?: any; }, any, { ...; }>' is not assignable to type 'Resolver<{ log_date: string; morning_update: boolean; wakeup_call: boolean; vendor_coordination: boolean; complaint_count: number; sentiment_score: number; ops_rating: number; notes?: string | undefined; proof_file?: any; }, any, { ...; }>'.
+  Types of parameters 'options' and 'options' are incompatible.
+    Type 'ResolverOptions<{ log_date: string; morning_update: boolean; wakeup_call: boolean; vendor_coordination: boolean; complaint_count: number; sentiment_score: number; ops_rating: number; notes?: string | undefined; proof_file?: any; }>' is not assignable to type 'ResolverOptions<{ log_date: string; morning_update: boolean; wakeup_call: boolean; vendor_coordination: boolean; complaint_count: unknown; sentiment_score: unknown; ops_rating: unknown; notes?: string | undefined; proof_file?: any; }>'.
+      Type 'unknown' is not assignable to type 'number'.
+
+[0m [90m 42 |[39m[0m
+[0m [90m 43 |[39m     [36mconst[39m form [33m=[39m useForm[33m<[39m[33mz[39m[33m.[39minfer[33m<[39m[36mtypeof[39m formSchema[33m>>[39m({[0m
+[0m[31m[1m>[22m[39m[90m 44 |[39m         resolver[33m:[39m zodResolver(formSchema)[33m,[39m[0m
+[0m [90m    |[39m         [31m[1m^[22m[39m[0m
+[0m [90m 45 |[39m         defaultValues[33m:[39m {[0m
+[0m [90m 46 |[39m             log_date[33m:[39m [36mnew[39m [33mDate[39m()[33m.[39mtoISOString()[33m.[39msplit([32m'T'[39m)[[35m0[39m][33m,[39m[0m
+[0m [90m 47 |[39m             morning_update[33m:[39m [36mfalse[39m[33m,[39m[0m
