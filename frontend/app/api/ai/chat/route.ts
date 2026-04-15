@@ -1,13 +1,14 @@
+export const dynamic = "force-dynamic";
 import { OpenAI } from "openai";
 import { createClient } from "@/utils/supabase/server";
 import { getSystemContext, formatContextForPrompt } from "@/utils/ai/context";
 import { NextRequest, NextResponse } from "next/server";
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(req: NextRequest) {
+    const openai = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+    });
+
     const supabase = await createClient();
 
     // 1. Auth Check - get user specifically
