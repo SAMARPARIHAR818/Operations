@@ -8,13 +8,13 @@ import { DollarSign, Map as MapIcon, Star, AlertTriangle } from "lucide-react"
 
 export default function DashboardPage() {
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Dashboard</h2>
             </div>
 
             {/* 1. KPI Cards */}
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <OverviewCard
                     title="Active Trips"
                     value="12"
@@ -46,13 +46,13 @@ export default function DashboardPage() {
             </div>
 
             {/* 2. Middle Row: Alerts & Timeline */}
-            <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-3">
+            <div className="grid gap-3 md:gap-4 grid-cols-1 lg:grid-cols-3">
                 <LiveAlertPanel />
                 <UpcomingTripsTimeline />
             </div>
 
             {/* 3. Bottom Row: Performance & Actions */}
-            <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-3">
+            <div className="grid gap-3 md:gap-4 grid-cols-1 lg:grid-cols-3">
                 <PerformanceSnapshot />
                 <QuickActionPanel />
                 <TripCalendar />

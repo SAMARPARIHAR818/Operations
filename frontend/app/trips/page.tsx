@@ -92,11 +92,11 @@ export default function TripsPage() {
     })
 
     return (
-        <div className="flex flex-col gap-6 p-6 min-h-screen bg-muted/20">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col gap-4 md:gap-6 p-4 md:p-6 min-h-screen bg-muted/20">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Trips Management</h1>
-                    <p className="text-muted-foreground mt-1">Track live and upcoming operations.</p>
+                    <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Trips Management</h1>
+                    <p className="text-muted-foreground mt-1 text-sm">Track live and upcoming operations.</p>
                 </div>
                 <div className="flex items-center gap-2">
                     {trips.length === 0 && !loading && (
@@ -125,17 +125,17 @@ export default function TripsPage() {
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-4 flex-wrap">
-                <div className="relative flex-1 max-w-sm">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-wrap">
+                <div className="relative flex-1 min-w-0">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
                         placeholder="Search destination..."
-                        className="pl-8 bg-white/50"
+                        className="pl-8 bg-white/50 w-full"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                     {["all", "Live", "Upcoming", "Completed"].map(s => (
                         <Button
                             key={s}

@@ -182,4 +182,15 @@
     @apply surface-lowest rounded-2xl;
     box-shadow: 0 20px 40px rgba(24, 28, 27, 0.06);
   }
+
+  /* iOS safe area bottom inset for mobile nav */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Touch-friendly tap targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

@@ -2,6 +2,7 @@
 
 import { Sidebar } from "@/components/layout/Sidebar"
 import { Topbar } from "@/components/layout/Topbar"
+import { MobileNav } from "@/components/layout/MobileNav"
 
 export function AppShell({ children }: { children: React.ReactNode }) {
     return (
@@ -9,10 +10,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <Sidebar />
             <div className="flex flex-1 flex-col overflow-hidden">
                 <Topbar />
-                <main className="flex-1 overflow-y-auto p-8">
+                <main className="flex-1 overflow-y-auto p-4 md:p-8 pb-20 md:pb-8">
                     {children}
                 </main>
             </div>
+            <MobileNav />
         </div>
     )
 }

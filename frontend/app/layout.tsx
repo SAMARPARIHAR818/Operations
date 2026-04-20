@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     description: "Operations Operating System",
 };
 
+export const viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    viewportFit: "cover",
+};
+
 import { AIAssistant } from "@/components/ai/AIAssistant";
 import { CurrencyProvider } from "@/components/providers/CurrencyProvider";
 
