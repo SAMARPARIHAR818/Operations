@@ -130,7 +130,7 @@ export function LiveMap() {
     const totalPax = tripLocations.reduce((sum, t) => sum + t.pax, 0)
 
     return (
-        <Card className="col-span-1 lg:col-span-2 rounded-2xl border-0 shadow-ambient surface-lowest overflow-hidden">
+        <Card className="col-span-1 lg:col-span-2 rounded-2xl border-0 shadow-ambient surface-lowest flex flex-col overflow-hidden min-h-[400px] md:h-[600px]">
             {/* Header with stats */}
             <CardHeader className="pb-3 z-10 relative">
                 <div className="flex items-center justify-between">
@@ -176,8 +176,8 @@ export function LiveMap() {
                 </div>
             </CardHeader>
 
-            <CardContent className="p-0 relative">
-                <div className="h-[480px] w-full relative">
+            <CardContent className="p-0 relative flex-1 flex flex-col min-h-0">
+                <div className="w-full flex-1 relative min-h-0">
                     {mounted ? (
                         <MapContainer
                             center={[20, 30]}

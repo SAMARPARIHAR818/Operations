@@ -27,8 +27,8 @@ const typeDotStyles = {
 
 export function TripStatusFeed() {
     return (
-        <Card className="col-span-1 h-[580px] rounded-2xl border-0 shadow-ambient surface-lowest">
-            <CardHeader>
+        <Card className="col-span-1 flex flex-col rounded-2xl border-0 shadow-ambient surface-lowest min-h-[400px] md:h-[600px]">
+            <CardHeader className="shrink-0">
                 <CardTitle className="flex items-center gap-2 tracking-tight">
                     <div className="h-8 w-8 rounded-xl bg-primary/10 flex items-center justify-center">
                         <Activity className="h-4 w-4 text-primary" />
@@ -36,7 +36,7 @@ export function TripStatusFeed() {
                     Live Feed
                 </CardTitle>
             </CardHeader>
-            <CardContent className="h-[480px] overflow-y-auto pr-2">
+            <CardContent className="flex-1 min-h-0 overflow-y-auto pr-2 pb-6">
                 <div className="space-y-4">
                     {updates.map((update, i) => (
                         <div key={i} className="relative pl-6 pb-1 last:pb-0">
