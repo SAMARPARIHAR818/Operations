@@ -62,11 +62,11 @@ export default function VendorsPage() {
     )
 
     return (
-        <div className="space-y-6">
-            <div className="flex items-center justify-between">
+        <div className="flex flex-col h-full space-y-4 md:space-y-6 p-4 md:p-6 min-h-screen bg-muted/20">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight">Vendors</h2>
-                    <p className="text-muted-foreground">Manage your vendor partnerships.</p>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Vendors</h2>
+                    <p className="text-muted-foreground text-sm">Manage your vendor partnerships.</p>
                 </div>
                 <div className="flex items-center gap-2">
                     {vendors.length === 0 && (
@@ -97,8 +97,8 @@ export default function VendorsPage() {
                 </div>
             </div>
 
-            <div className="flex items-center gap-4">
-                <div className="relative flex-1 max-w-sm">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <div className="relative flex-1 min-w-0">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
                         type="search"

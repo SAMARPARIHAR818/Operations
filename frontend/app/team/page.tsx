@@ -184,22 +184,22 @@ export default function TeamPage() {
         : []
 
     return (
-        <div className="flex flex-col gap-6 p-6 min-h-screen">
+        <div className="flex flex-col gap-4 md:gap-6 p-4 md:p-6 min-h-screen bg-muted/20">
             {/* Page Header with Back Button */}
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                     <Link href="/dashboard">
-                        <Button variant="ghost" size="icon" className="rounded-full h-9 w-9 hover:bg-muted/50">
+                        <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 md:h-9 md:w-9 hover:bg-muted/50">
                             <ArrowLeft className="h-4 w-4" />
                         </Button>
                     </Link>
                     <div>
-                        <h1 className="text-3xl font-bold tracking-tight">Team Hub</h1>
+                        <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Team Hub</h1>
                         <p className="text-muted-foreground mt-0.5 text-sm">Monitor your team, track tasks, and keep operations running smoothly.</p>
                     </div>
                 </div>
-                <Button className="shadow-lg gap-2" onClick={() => setAddMemberOpen(true)}>
-                    <UserPlus className="h-4 w-4" /> Add Team Member
+                <Button size="sm" className="shadow-lg gap-2" onClick={() => setAddMemberOpen(true)}>
+                    <UserPlus className="h-4 w-4" /> <span className="hidden sm:inline">Add Team Member</span><span className="sm:hidden">Add Team</span>
                 </Button>
             </div>
 
@@ -248,9 +248,9 @@ export default function TeamPage() {
                 <>
                     {/* Filters */}
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                        <div className="relative flex-1 max-w-sm">
+                        <div className="relative flex-1 min-w-0 w-full sm:max-w-sm">
                             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                            <Input placeholder="Search by name, role, department..." className="pl-8 bg-white/50" value={search} onChange={e => setSearch(e.target.value)} />
+                            <Input placeholder="Search by name, role, department..." className="pl-8 bg-white/50 w-full" value={search} onChange={e => setSearch(e.target.value)} />
                         </div>
                         <div className="flex gap-1.5 flex-wrap">
                             {departments.map(d => (

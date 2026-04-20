@@ -4,10 +4,10 @@ import "leaflet/dist/leaflet.css"
 
 export default function MonitoringPage() {
     return (
-        <div className="space-y-8">
-            <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-4 md:gap-8 p-4 md:p-6 min-h-screen bg-muted/20">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight">Live Operations Monitoring</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Live Operations Monitoring</h2>
                     <p className="text-sm text-muted-foreground mt-1">Track all active trips across the globe in real-time</p>
                 </div>
             </div>
